@@ -1,0 +1,22 @@
+table {
+    border: 2px solid black;
+    border-collapse: collapse; /* để viền gọn */
+    width: 70%;
+}
+
+thead tr th{
+    background-color: green;
+    color:white;
+}
+tr:nth-child(even) {
+            background-color: lightgreen;
+}
+
+ tr:nth-child(odd) {
+            background-color: white;
+}
+td, th {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
