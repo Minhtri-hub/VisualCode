@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <title>Ex 48_Nqmt</title>
+        <style type="text/css">
+          
+          body{ background-color: lightblue;}
+        </style>
+    </head>
+    <body>
+        <h1 align="center">Jackson</h1>
+        <hr/>
+        <h1 align="center">Electronic</h1>
+        <br/>
+        <h3 align="center">Registration Form</h3>
+        <p align="center">Register your Jackson Electronic product here</p>
+
+        <table>
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" name="firstname" id="firstname"/></td>
+                <td>Last Name</td>
+                <td><input type="text" name="lastname" id="lastname"/></td>
+            </tr>
+            <tr>
+                <td>Address #1</td>
+                <td colspan="3"><input type="text" name="address1" id="address1" size="50"/></td>
+            </tr>
+            <tr>
+                <td>Address #2</td>
+                <td colspan="3"><input type="text" name="address2" id="address2" size="50"/></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td><input type="text" name="city" id="city"/></td>
+                <td>State</td>
+                <td><input type="text" name="state" id="state"/></td>
+            </tr>
+            <tr>
+                <td>Zip</td>
+                <td><input type="text" name="zip" id="zip"/></td>
+               
+            </tr>
+            <tr> <td>Country</td>
+                <td><input type="text" name="country" id="country"/></td></tr>
+            <tr><td colspan="5"><hr/></td></tr>
+            <tr>
+                <td>Product</td>
+                <td colspan="3">
+                    <select name="product" id="product">
+                        <option value="1">Scan Master</option>
+                        <option value="2">Visa</option>
+                        <option value="3">QR Scan</option>
+                        <option value="4">Cash</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Date Purchased</td>
+                <td colspan="3"><input type="date" name="date" id="date"/></td>
+            </tr>
+            <tr>
+                <td>Serial Number</td>
+                <td colspan="3"><input type="text" name="serialnumber" id="serialnumber"/></td>
+            </tr>
+            <tr>
+                <td rowspan="3">Used for</td>
+                <td><input type="radio" name="location" id="home"/> <label for="home">Home</label></td>
+                <td><input type="radio" name="location" id="edu"/> <label for="edu">Educational Institution</label></td>
+               
+            </tr>
+            <tr>
+                <td><input type="radio" name="location" id="business"/> <label for="business">Business</label></td>
+                <td><input type="radio" name="location" id="other"/> <label for="other">Other</label></td>
+                
+            </tr>
+            <tr>
+                <td><input type="radio" name="location" id="gov">
+                <label for="gov">Government</label></td>
+            </tr>
+            <tr>
+                <td colspan="2">System(check all that apply)</td>
+                <td><input type="checkbox" name="win" id="win">
+                <label for="win">Windows</label></td>
+                <td><input type="checkbox" name="unix" id="unix">
+                <label for="unix">Unix</label></td>
+                
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td><input type="checkbox" name="mac" id="mac">
+                <label for="mac">Macintosh</label></td>
+                <td><input type="checkbox" name="other" id="other">
+                <label for="other">Other</label></td>
+            </tr>
+            <tr><td colspan="5"><hr/></td></tr>
+            <tr>
+                <td colspan="2">Comments?</td>
+                <td rowspan="3">
+                    <textarea name="comment" id="comment" rows="3" cols="40">
+                    </textarea>
+            </td>
+            </tr>
+        </table>
+    <p align="center">
+  
+  <input type="button" value="Click to cancel" onclick="window.history.back();">
+  <input type="submit" value="Click to register" onclick="window.alert('Registered Successfully');">
+</p>
+
+    </body>
+</html>
