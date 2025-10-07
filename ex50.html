@@ -1,0 +1,213 @@
+<html>
+<head>
+    <title>Ex50_NguyenQuachMinhTri</title>
+    <style>
+        body {
+            background-color: #CCFFFF;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        h2 {
+            text-align: left;
+            margin-left: 20px;
+        }
+
+        hr {
+            border: 1px solid #666;
+            width: 95%;
+        }
+
+        form {
+            margin-left: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 95%;
+        }
+
+        table td {
+            padding: 5px;
+            vertical-align: top;
+        }
+
+        table.inner {
+            width: 100%;
+            border: 1px solid #666;
+        }
+
+        table.inner th {
+            background-color: #CCCCCC;
+            text-align: center;
+            border: 1px solid #666;
+        }
+
+        table.inner td {
+            border: 1px solid #666;
+            text-align: center;
+        }
+
+        textarea {
+            width: 500px;
+            height: 60px;
+        }
+
+        input[type="text"], input[type="date"], select {
+            width: 95%;
+            padding: 3px;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            padding: 5px 15px;
+            margin: 5px;
+        }
+
+        p.footer {
+            margin-left: 20px;
+            font-style: italic;
+        }
+
+        img {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <p align="center">
+            <img src="../Exercise50/images/DeLong.jpg" alt="DeLong Enterprises"/>
+        </p>
+
+        <h2>Travel Expense Report</h2>
+        <hr/>
+
+        <table>
+            <tr>
+                <td>1) First Name:</td>
+                <td><input type="text" name="f_name" id="f_name"/></td>
+                <td>Last Name:</td>
+                <td><input type="text" name="l_name" id="l_name"/></td>
+            </tr>
+
+            <tr>
+                <td>2) Social Security Number:</td>
+                <td><input type="text" name="secure_number" id="secure_number"/></td>
+            </tr>
+
+            <tr>
+                <td>3) Department:</td>
+                <td>
+                    <select name="department" id="department">
+                        <option>Accounting</option>
+                        <option>Marketing</option>
+                        <option>Sales</option>
+                        <option>Human Resources</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="4">4) Describe the purpose of your trip:</td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <textarea name="describe"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="4">5) Itemize your travel expenses:</td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <table class="inner">
+                        <tr>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                        </tr>
+
+                        <tr>
+                            <td><input type="date" name="date1"/></td>
+                            <td><input type="text" name="desc1"/></td>
+                            <td>
+                                <select name="cat1">
+                                    <option>Meal</option>
+                                    <option>Transport</option>
+                                    <option>Lodging</option>
+                                    <option>Other</option>
+                                </select>
+                            </td>
+                            <td><input type="text" name="amount1"/></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="date" name="date2"/></td>
+                            <td><input type="text" name="desc2"/></td>
+                            <td>
+                                <select name="cat2">
+                                    <option>Meal</option>
+                                    <option>Transport</option>
+                                    <option>Lodging</option>
+                                    <option>Other</option>
+                                </select>
+                            </td>
+                            <td><input type="text" name="amount2"/></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="date" name="date3"/></td>
+                            <td><input type="text" name="desc3"/></td>
+                            <td>
+                                <select name="cat3">
+                                    <option>Meal</option>
+                                    <option>Transport</option>
+                                    <option>Lodging</option>
+                                    <option>Other</option>
+                                </select>
+                            </td>
+                            <td><input type="text" name="amount3"/></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="date" name="date4"/></td>
+                            <td><input type="text" name="desc4"/></td>
+                            <td>
+                                <select name="cat4">
+                                    <option>Meal</option>
+                                    <option>Transport</option>
+                                    <option>Lodging</option>
+                                    <option>Other</option>
+                                </select>
+                            </td>
+                            <td><input type="text" name="amount4"/></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td>6) Have you submitted your receipts?</td>
+                <td colspan="3">
+                    <input type="radio" name="receipt" value="yes"/> Yes
+                    <input type="radio" name="receipt" value="no"/> No
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="4" align="center">
+                    <input type="submit" value="Submit travel expenses" onclick="alert('Travel expense submitted successfully!')"/>
+             
+                    <input type="reset" value="Reset"/>
+                </td>
+            </tr>
+        </table>
+
+        <p class="footer">
+            Questions? Contact Debbie Larson in Accounting (ext. 2150).
+        </p>
+    </form>
+</body>
+</html>
