@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Product - NQMT</title>
+    </head>
+    <body>
+        <script>
+            function get_tr(id, name, price, isOfficial) {
+                // Nếu không phải hàng Official, tô màu đỏ
+                let style = isOfficial ? "" : " style='background-color: red;'";
+                let row = "<tr" + style + "><td>" + id + "</td><td>" + name + "</td><td>" + price + "</td></tr>";
+                return row;
+            }
+
+            function do_saveproduct() {
+                let id = frm_product_input.product_id.value;
+                let name = frm_product_input.product_name.value;
+                let price = frm_product_input.product_price.value;
+                let isOfficial = frm_product_input.product_type.checked;
+
+                // Tạo dòng sản phẩm
+                let tr = get_tr(id, name, price, isOfficial);
+
+                // Thêm vào bảng
+                let product_body = document.getElementById("product_body");
+                product_body.innerHTML += tr;
+            }
+        </script>
+
+        <form name="frm_product_input">
+            <table border="1" cellpadding="5">
+                <tr>
+                    <td>Product ID</td>
+                    <td><input type="text" name="product_id" id="product_id" /></td>
+                </tr>
+                <tr>
+                    <td>Product Name</td>
+                    <td><input type="text" name="product_name" id="product_name" /></td>
+                </tr>
+                <tr>
+                    <td>Unit Price</td>
+                    <td><input type="text" name="product_price" id="product_price" /></td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>
+                        <input type="checkbox" name="product_type" id="product_type" />
+                        <label for="product_type">Official</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <button type="button" onclick="do_saveproduct()">Save</button>
+                        <button type="reset">Clear</button>
+                        <button type="button">Help</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <hr />
+
+        <table border="1" cellpadding="5">
+            <caption><b>List of Product</b></caption>
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Unit Price</th>
+                </tr>
+            </thead>
+            <tbody id="product_body"></tbody>
+        </table>
+    </body>
+</html>
