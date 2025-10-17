@@ -1,0 +1,50 @@
+
+<html>
+<head>
+ 
+    <title>ex52</title>
+</head>
+<body>
+    <h2>Contact the editorial office</h2>
+    <form name="frm_contact" method="get" action="Result.html">
+        <fieldset>
+            <legend>Contact the editorial office</legend>
+            <table>
+                <tr>
+                    <td>Full name</td>
+                    <td><input type="text" name="fullname" required></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <td>Send to</td>
+                    <td>
+                        <select name="sendto">
+                            <option>Editorial board</option>
+                            <option>News Department</option>
+                            <option>Board of Perspectives</option>
+                            <option>World Board</option>
+                            <option>Business Department</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Title</td>
+                    <td><input type="text" name="title" required></td>
+                </tr>
+                <tr>
+                    <td>Content</td>
+                    <td><textarea name="content" required></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:right;">
+                        <button type="submit" class="send-btn">Send</button>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>

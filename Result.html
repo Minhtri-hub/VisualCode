@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>ex52</title>
+</head>
+<body>
+    <h2>Message Information</h2>
+
+    <script>
+        let query = location.search.substring(1);
+        let parts = query.split("&");
+        let data = {};
+
+        for (let i = 0; i < parts.length; i++) {
+            let pair = parts[i].split("=");
+            let key = decodeURIComponent(pair[0]);
+            let value = decodeURIComponent(pair[1] || "");
+            data[key] = value.replace(/\+/g, " ");
+        }
+
+        document.write("<p><b>Full name:</b> " + data.fullname + "</p>");
+        document.write("<p><b>Email:</b> " + data.email + "</p>");
+        document.write("<p><b>Send to:</b> " + data.department + "</p>");
+        document.write("<p><b>Title:</b> " + data.title + "</p>");
+        document.write("<p><b>Content:</b> " + data.content + "</p>");
+    </script>
+
+    <p><a href="ex52.html">← Back to Contact Page</a></p>
+</body>
+</html>
