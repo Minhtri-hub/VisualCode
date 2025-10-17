@@ -1,0 +1,96 @@
+<html>
+<head>
+    <title>String Processing - NQMT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        table {
+            margin: 0 auto;
+        }
+        textarea {
+            width: 250px;
+            height: 80px;
+        }
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Using String Processing functions</h2>
+    <table border="0">
+        <tr>
+            <th>Input Data:</th>
+            <th>Result:</th>
+        </tr>
+        <tr>
+            <td><textarea id="input"></textarea></td>
+            <td><textarea id="output" readonly></textarea></td>
+        </tr>
+    </table>
+
+    <div>
+        <button onclick="enterData()">Enter Data</button>
+        <button onclick="countUpper()">Count the number of uppercase characters</button><br>
+        <button onclick="toUpper()">Uppercase display</button>
+        <button onclick="onePerLine()">Output one word per line</button><br>
+        <button onclick="toLower()">Lowercase display</button>
+        <button onclick="wordCount()">Word count</button><br>
+        <button onclick="countLower()">Count the number of lowercase characters</button>
+        <button onclick="printVowels()">Print vowels, consonants</button>
+    </div>
+
+    <script>
+        function enterData() {
+            document.getElementById("output").value = document.getElementById("input").value;
+        }
+
+        function countUpper() {
+            let text = document.getElementById("input").value;
+            let count = (text.match(/[A-Z]/g) || []).length;
+            document.getElementById("output").value = "Uppercase count: " + count;
+        }
+
+        function toUpper() {
+            document.getElementById("output").value = document.getElementById("input").value.toUpperCase();
+        }
+
+        function toLower() {
+            document.getElementById("output").value = document.getElementById("input").value.toLowerCase();
+        }
+
+        function countLower() {
+            let text = document.getElementById("input").value;
+            let count = (text.match(/[a-z]/g) || []).length;
+            document.getElementById("output").value = "Lowercase count: " + count;
+        }
+
+        function wordCount() {
+            let text = document.getElementById("input").value.trim();
+            if (text === "") {
+                document.getElementById("output").value = "Word count: 0";
+                return;
+            }
+            let words = text.split(/\s+/);
+            document.getElementById("output").value = "Word count: " + words.length;
+        }
+
+        function onePerLine() {
+            let text = document.getElementById("input").value.trim();
+            let words = text.split(/\s+/);
+            document.getElementById("output").value = words.join("\n");
+        }
+
+        function printVowels() {
+            let text = document.getElementById("input").value.toLowerCase();
+            let vowels = text.match(/[aeiou]/g) || [];
+            let consonants = text.match(/[bcdfghjklmnpqrstvwxyz]/g) || [];
+            document.getElementById("output").value = 
+                "Vowels: " + vowels.length + "\nConsonants: " + consonants.length;
+        }
+    </script>
+</body>
+</html>
