@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Product - Result</title>
+</head>
+<body>
+    <h2>Order Summary</h2>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        document.write("<p>Quantity 1: " + params.get("qty1") + "</p>");
+        document.write("<p>Quantity 2: " + params.get("qty2") + "</p>");
+        document.write("<p>Quantity 3: " + params.get("qty3") + "</p>");
+        document.write("<p>Item 1 total: " + params.get("item1") + "</p>");
+        document.write("<p>Item 2 total: " + params.get("item2") + "</p>");
+        document.write("<p>Item 3 total: " + params.get("item3") + "</p>");
+        document.write("<h3>Total: " + params.get("total") + "</h3>");
+    </script>
+</body>
+</html>

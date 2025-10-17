@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Exercise 53 - Product GET</title>
+</head>
+<body>
+    <h2>Product List</h2>
+    <form action="result.html" method="get">
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <th>Part Number</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Item total</th>
+            </tr>
+            <tr>
+                <td>C112</td>
+                <td>Mouse</td>
+                <td>19.95</td>
+                <td><input type="text" name="qty1" id="qty1" size="5" oninput="calcItem(1)"></td>
+                <td><input type="text" name="item1" id="item1" size="8" readonly></td>
+            </tr>
+            <tr>
+                <td>B124</td>
+                <td>Keyboard US</td>
+                <td>29.95</td>
+                <td><input type="text" name="qty2" id="qty2" size="5" oninput="calcItem(2)"></td>
+                <td><input type="text" name="item2" id="item2" size="8" readonly></td>
+            </tr>
+            <tr>
+                <td>U125</td>
+                <td>USB KingMax</td>
+                <td>39.95</td>
+                <td><input type="text" name="qty3" id="qty3" size="5" oninput="calcItem(3)"></td>
+                <td><input type="text" name="item3" id="item3" size="8" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="4" align="right">Total:</td>
+                <td><input type="text" name="total" id="total" readonly></td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" value="Sum">
+    </form>
+
+    <script>
+        function calcItem(i) {
+            const prices = [19.95, 29.95, 39.95];
+            const qty = parseFloat(document.getElementById("qty" + i).value) || 0;
+            const itemTotal = prices[i - 1] * qty;
+            document.getElementById("item" + i).value = itemTotal.toFixed(2);
+
+            // Cập nhật tổng
+            let total = 0;
+            for (let j = 1; j <= 3; j++) {
+                total += parseFloat(document.getElementById("item" + j).value) || 0;
+            }
+            document.getElementById("total").value = total.toFixed(2);
+        }
+    </script>
+</body>
+</html>
